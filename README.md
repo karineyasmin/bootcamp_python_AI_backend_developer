@@ -1,2 +1,1 @@
-# bootcamp_python_AI_backend_developer
-# bootcamp_python_AI_backend_developer
+Repositório dedicado ao Bootcamp Python AI Back-end Developer.
