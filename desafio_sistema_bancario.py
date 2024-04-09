@@ -22,10 +22,8 @@ exemplo:
 
 1500.45=R$1500.45
 '''
-cabecalho = '***'
+cabecalho = '=-=-=-=-=-=-'
 menu = f'''
-{cabecalho * 2} BANCO RIBEIRO {cabecalho * 2}
-
 [d] Depositar
 [s] Sacar
 [e] Extrato
@@ -36,59 +34,65 @@ saldo = 0
 limite = 500
 numero_saques = 0
 LIMITE_SAQUES = 3
-extrato = [ ]
+extrato = ''
 
 
 while True:
-    
+
     opcao = input(menu).lower()
     
     if opcao == 'd':
-        print(f'\nDepósito')
-        deposito = float(input('\nQuanto você quer depositar? R$'))
-        if deposito > 0:
-            saldo += deposito
-            extrato.append({'Depósito': deposito})
+        valor = float(input('\nInforme o valor do depósito: R$ '))
+        
+        if valor > 0:
+            saldo += valor
+            extrato += f'\nDepósito de R${valor:.2f}'
+            
+            
         else:
-            print('\nValor de depósito não aceito.')
-        print(f'\nSaldo atual: R${saldo:.2f}')
+            print('\nA operação falhou! O valor é inválido.')
+        print(f'Saldo atual: R${saldo:.2f}\n{cabecalho * 3}')
 #----------------------------------------------------------------------------------------------------------------    
     elif opcao == 's':
-        print('\nSaque') 
-    
-    
-        if numero_saques < LIMITE_SAQUES:
-            if saldo > 0:
-                    print(f'\nSaldo: {saldo}')
-                    saque = float(input('\nDigite o valor do saque: R$ '))
-                    
-                    if saque <= limite:
-                        
-                        if saque <= saldo:
-                            
-                            saldo -= saque
-                            numero_saques += 1
-                            print(f'\nSaldo: R${saldo:.2f}')
-                            extrato.append({'Saque': saque})
-                            
-                        else:
-                            print('\nSaldo insuficiente.')
-                        
-                    else:
-                        print(f'\nValor acima do limite permitido de R${limite:.2f} por saque.')
-                        
-            else:
-                print('\nNão há saldo disponível para saque.')
-        else:
-            print(f'\nQuantidade de saques diários excedidos.')
-
-#---------------------------------------------------------------------------------------------------------------
-    
-    elif opcao == 'e':
-        print('\nExtrato:')
+        valor = float(input('\nInforme o valor do saque: R$ '))
         
-        print(f'\n{extrato}')
-        print(f'\nSaldo: R${saldo:.2f}')
+        excede_saldo = valor > saldo
+        
+        excede_limite = valor > limite 
+        
+        excede_saques = numero_saques >= LIMITE_SAQUES 
+        
+        if excede_saldo:
+            print('Saldo insuficiente.')
+            
+        elif excede_limite:
+            print('Operação falhou! O valor excedeu o limite de saque.')
+            
+        elif excede_saques:
+            print('Quantidade de saques diários excedidos.')
+            
+        elif valor > 0:
+            saldo -= valor
+            extrato += f'Saque de R$ {saldo}'
+            numero_saques += 1
+             
+        else:
+            print('A operação falhou! O valor é inválido')
+        print(f'Saldo atual: R${saldo:.2f}\n{cabecalho * 3}')
+        
+#---------------------------------------------------------------------------------------------------------------
+    elif opcao == 'e':
+        
+        print(f'{cabecalho} Extrato {cabecalho}')
+        if not extrato:
+            print('Não foram feitas operações.')
+        else:        
+        
+            print(f'{extrato}\n')
+        print(f'\nSaldo atual: R${saldo:.2f}')
+        print(cabecalho * 3)
+        
+        
     elif opcao == 'q':
         break
     
