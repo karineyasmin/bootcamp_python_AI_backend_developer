@@ -1,27 +1,6 @@
-'''
-Regras
-
-Operação de depósito:
-
-Deve ser possivel depositar valores positivos para a minha conta bancaria. A v1 do projeto trabalha apenas com 1 usuario，
-dessa forma nao precisamos nos preocupar em identificar qual é o numero da agência e conta bancária. 
-Todos os depositos devem ser armazenados em uma variável e exibidos na operação de extrato.
- 
-Operação de saque:
- 
-O sistema deve permitir realizar 3 saques diarios com limite maximo de R$ 500,00 por saque.
-Caso o usuario não tenha saldo em conta, o sistema deve exibir uma mensagem informando que nao sera possivel sacar o dinheiro por falta de saldo.
-Todos os saques devem ser armazenados em uma variável e exibidos na operação de extrato.
-
-Operação de extrato
-
-Essa operação deve listar todos os depósitos e saques realizados na conta. 
-No fim da listagem deve ser exibido saldo atual da conta.
-Os valores devem ser exibidos utilizando o formato R$ xxx.xx,
-exemplo:
-
-1500.45=R$1500.45
-'''
+# v1.0 - 08/04/24
+# Autora: Karine Yasmin
+# ---------------------------------------------------------------------------
 cabecalho = '=-=-=-=-=-=-'
 menu = f'''
 [d] Depositar
@@ -52,7 +31,7 @@ while True:
         else:
             print('\nA operação falhou! O valor é inválido.')
         print(f'Saldo atual: R${saldo:.2f}\n{cabecalho * 3}')
-#----------------------------------------------------------------------------------------------------------------    
+
     elif opcao == 's':
         valor = float(input('\nInforme o valor do saque: R$ '))
         
@@ -80,7 +59,7 @@ while True:
             print('A operação falhou! O valor é inválido')
         print(f'Saldo atual: R${saldo:.2f}\n{cabecalho * 3}')
         
-#---------------------------------------------------------------------------------------------------------------
+
     elif opcao == 'e':
         
         print(f'{cabecalho} Extrato {cabecalho}')
