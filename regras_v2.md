@@ -1,26 +1,29 @@
-Desafio de projeto 2.0
+## Desafio de projeto Versão 2.0
 
-Regras:
+### Regras:
 
-Precisamos deixar nosso código mais modularizado, para isso vamos:
+Precisamos deixar nosso código **mais modularizado**, para isso vamos:
 
-criar para as operações existentes: 
-sacar, depositar e visualizar histórico. 
-Além disso, para a versao 2 do nosso sistema precisamos criar duas novas funções: 
-criar usuário(cliente do banco) e criar conta corrente (vincular com usuário).
+- criar funções para as operações existentes: 
+  - sacar, depositar e visualizar histórico. 
+- Além disso, para a versao 2 do nosso sistema precisamos criar duas novas funções: 
+    - criar usuário(cliente do banco) e criar conta corrente (vincular com usuário).
 
-Separacao em funções
+### **Separacao em funções**
 
 Devemos criar funções para todas as operações do sistema.
-Para exercitar tudo o que aprendemos neste modulo, cada função vai ter uma regra na passagem de argumentos. ]
+
+Para exercitar tudo o que aprendemos neste modulo, cada função vai ter uma regra na passagem de argumentos. 
+
 O retorno e a forma como serão chamadas, pode ser definida por você da forma que achar melhor.
 
-Saque
-A função saque deve receber os argumentos apenas por nome (keyword only). 
+### **Saque**
+A função saque deve receber os argumentos apenas por nome (**keyword only**). 
+
 Sugestão de argumentos: saldo, valor, extrato, limite, número_saques, limite_saques. 
 Sugestão de retorno: saldo e extrato.
 
-Depósito
+### **Depósito**
 A função depósito deve receber os argumentos apenas por posição (positional only). 
 Sugestão de argumentos: saldo, valor extrato. 
 Sugestão de retorno: saldo e extrato.

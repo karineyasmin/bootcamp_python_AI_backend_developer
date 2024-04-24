@@ -1,12 +1,13 @@
 # v1.0 - 08/04/24
 # Autora: Karine Yasmin
+#Regras no arquivo regras_v1.txt
 # ---------------------------------------------------------------------------
-cabecalho = '=-=-=-=-=-=-'
-menu = f'''
-[d] Depositar
-[s] Sacar
-[e] Extrato
-[q] Sair
+menu = '''=-=-= Menu da Conta =-=-=
+
+    [d] Depositar
+    [s] Sacar
+    [e] Extrato
+    [q] Sair
 
 => '''
 saldo = 0
@@ -30,8 +31,7 @@ while True:
             
         else:
             print('\nA operação falhou! O valor é inválido.')
-        print(f'Saldo atual: R${saldo:.2f}\n{cabecalho * 3}')
-
+        print(f'Saldo atual: R${saldo:.2f}\n')
     elif opcao == 's':
         valor = float(input('\nInforme o valor do saque: R$ '))
         
@@ -45,31 +45,31 @@ while True:
             print('Saldo insuficiente.')
             
         elif excede_limite:
-            print('Operação falhou! O valor excedeu o limite de saque.')
+            print('\nOperação falhou! O valor excedeu o limite de saque.\n')
             
         elif excede_saques:
-            print('Quantidade de saques diários excedidos.')
+            print('\nQuantidade de saques diários excedidos.\n')
             
         elif valor > 0:
             saldo -= valor
-            extrato += f'Saque de R$ {saldo}'
+            extrato += f'\nSaque de R$ {valor}'
             numero_saques += 1
              
         else:
-            print('A operação falhou! O valor é inválido')
-        print(f'Saldo atual: R${saldo:.2f}\n{cabecalho * 3}')
+            print('\nA operação falhou! O valor é inválido\n')
+        print(f'\nSaldo atual: R${saldo:.2f}\n')
         
 
     elif opcao == 'e':
         
-        print(f'{cabecalho} Extrato {cabecalho}')
+        print(f'=-=-= Extrato =-=-=')
         if not extrato:
-            print('Não foram feitas operações.')
+            print('\nNão foram feitas operações.\n')
         else:        
         
             print(f'{extrato}\n')
-        print(f'\nSaldo atual: R${saldo:.2f}')
-        print(cabecalho * 3)
+        print(f'Saldo atual: R${saldo:.2f}')
+        
         
         
     elif opcao == 'q':
