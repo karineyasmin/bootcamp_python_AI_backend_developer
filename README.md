@@ -1,17 +1,7 @@
-### Repositório dedicado ao Bootcamp Python AI Back-end Developer.
----
-##### *os desafios estão separados por tipo de implementação, implementação básica usando paradigma estruturado, com funções e utilizando programação orietanda a objetos.*
----
-#### Todos os desafios são sobre implementar um sistema bancário, onde podemos:
+### Bootcamp Python AI Backend Developer da DIO
 
-- sacar;
-- depositar;
-- verificar o extrato;
+#### Aqui se encontram os códigos dos desafios de projeto.
 
-#### Apartir da versão com funções também é permitido:
-
-- criar conta;
-- criar usuário;
-- e listar usuários;
-
-_______
+- Desafio de Projeto Sistema Bancário;
+- Desenvolvendo sua primeira API com FastAPI, Python e Docker - Workout API
+- Criando Uma APIcom FastAPI Usando TDD.
