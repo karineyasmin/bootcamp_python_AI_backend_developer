@@ -4,4 +4,4 @@
 
 - Desafio de Projeto Sistema Bancário;
 - Desenvolvendo sua primeira API com FastAPI, Python e Docker - workout_api
-- Criando Uma APIcom FastAPI Usando TDD - store_api
+- Criando Uma API com FastAPI Usando TDD - store_api
